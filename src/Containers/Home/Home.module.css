@@ -5,3 +5,10 @@
   justify-content: center;
   align-items: center;
 }
+
+.candidateContainer {
+  width: 100%;
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+}
