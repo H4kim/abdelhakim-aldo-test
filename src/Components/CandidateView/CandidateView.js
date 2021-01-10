@@ -4,26 +4,22 @@ import {connect} from 'react-redux'
 import {addCandidates} from '../../Redux/actions'
 const CandidateView = (props) => {
     const addCandidates = () => {
-        props.addCandidates([4,5])
+        props.addCandidates([{name:"trump"},{name:'deni'}])
+        console.log(props.candidates)
     }
     return (
         <div className={classes.container} onClick={() => addCandidates()}>
-            {`YOO IT'S WORKING ${props.candidatesIDs}`}
+            {`YOO IT'S WORKING ${props.candidates}`}
         </div>
     )
 }
 
 
 const mapStateToProps = (state) => {
-    // ... computed data from state and optionally ownProps
     return {
-        candidatesIDs: state.Candidate.candidatesIDs,
-        selectedCandidate: state.Candidate.selectedCandidate
+        candidates: state.candidate.candidates,
+        selectedCandidateID: state.candidate.selectedCandidateID
     }   
 }
   
-//   const mapDispatchToProps = {
-//     // ... normally is an object full of action creators
-//   }
-
 export default connect(mapStateToProps , {addCandidates} )(CandidateView)

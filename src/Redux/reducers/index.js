@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import Candidate from './candidate'
+import candidate from './candidate'
 
-export default combineReducers({Candidate})
+export default combineReducers({candidate})

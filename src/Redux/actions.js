@@ -1,4 +1,4 @@
-import { ADD_CANDIDATE, SWITCH_CANDIDATE } from "./actionTypes";
+import { ADD_CANDIDATE, SWITCH_CANDIDATE_BY_ID } from "./actionTypes";
 
 
 export const addCandidates = (IDs) => {
@@ -9,7 +9,7 @@ export const addCandidates = (IDs) => {
 }
 export const switchCandidate = (candidateID) => {
     return {
-        type: SWITCH_CANDIDATE,
+        type: SWITCH_CANDIDATE_BY_ID,
         payload : candidateID
     }
 }
