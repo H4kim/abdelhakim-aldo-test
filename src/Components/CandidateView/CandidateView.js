@@ -6,7 +6,6 @@ import ViewsTitle from '../ViewsTitle/ViewsTitle'
 import Tweet from '../Tweet/Tweet'
 const CandidateView = (props) => {
     const renderTweets = () => {
-        console.log(props.selectedCandidate)
         if(!props.selectedCandidate.tweets) return
         return props.selectedCandidate.tweets.map((cur,i) => {
             return <Tweet key={cur.id} tweet={cur.text}/>
