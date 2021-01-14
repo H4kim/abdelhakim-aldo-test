@@ -1,15 +1,15 @@
 import { ADD_CANDIDATE, SWITCH_CANDIDATE_BY_ID } from "./actionTypes";
 
 
-export const addCandidates = (IDs) => {
+export const addCandidates = (data) => {
     return {
         type: ADD_CANDIDATE,
-        payload: IDs
+        payload: data
     }
 }
-export const switchCandidate = (candidateID) => {
+export const switchCandidate = () => {
     return {
         type: SWITCH_CANDIDATE_BY_ID,
-        payload : candidateID
+        payload : null
     }
-}
+}   

@@ -3,10 +3,12 @@ import React from 'react'
 import PrimaryTitle from '../../Components/PrimaryTitle/PrimaryTitle'
 import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton'
 import CandidateView from '../../Components/CandidateView/CandidateView'
+import {connect} from 'react-redux'
+import {switchCandidate} from '../../Redux/actions'
 
-const Home = () => {
+const Home = (props) => {
     const switchViewHandler = () => {
-        //TODO set the state 
+        props.switchCandidate()
     }
     return (
         <div className={classes.container}>
@@ -19,4 +21,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default connect(null, {switchCandidate})(Home)

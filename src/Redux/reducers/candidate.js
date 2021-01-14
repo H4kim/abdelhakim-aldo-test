@@ -1,32 +1,32 @@
 /* eslint-disable import/no-anonymous-default-export */
+import { processCandidatesData } from '../../Utils/processData'
 import {SWITCH_CANDIDATE_BY_ID, ADD_CANDIDATE} from '../actionTypes'
 
 const initialState = {
     candidates : [],
-    selectedCandidateID: 1215
+    selectedCandidate: {}
 }
+
+
 
 export default function(state = initialState , action) {
     switch(action.type) {
         case ADD_CANDIDATE : {
+            const newState = processCandidatesData(action.payload)
             return {
-                ...state,
-                candidates : [...state.candidates, ...action.payload  ]
+                selectedCandidate: newState[0],
+                candidates : newState
             }
         }
         case SWITCH_CANDIDATE_BY_ID : {
+            const selectedCandidate = state.candidates.filter(cur => {
+                return cur.name !== state.selectedCandidate.name
+            })
             return {
                 ...state,
-                selectedCandidateID : action.payload
+                selectedCandidate : selectedCandidate[0]
             }
         }
         default: return state;
     }
 }
-
-
-/*
-    1- for the app.js make a call to twitter api and get the data of all candidates
-    2- update the store's state (candidates) AND set the first candidate as selected by default (selectedCandidateID)
-    
-*/

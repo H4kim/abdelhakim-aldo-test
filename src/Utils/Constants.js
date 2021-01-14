@@ -1,2 +1,2 @@
-export const TWITTER_GET_TWEETS_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://api.twitter.com/2'
-export const TWITTER_USERS_IDS = [{hakim: '1673338454'},{biden:'939091'}]
+export const TWITTER_GET_TWEETS_BASE_URL = 'http://127.0.0.1:8080/https://api.twitter.com/2'
+export const TWITTER_USERS_IDS = ['1673338454','939091']
