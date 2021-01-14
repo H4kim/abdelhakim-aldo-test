@@ -3,9 +3,9 @@ import React from 'react'
 
 const PrimaryTitle = ({text}) => {
     return (
-        <div className={classes.container}>
+        <p className={classes.title}>
             {text}
-        </div>
+        </p>
     )
 }
 

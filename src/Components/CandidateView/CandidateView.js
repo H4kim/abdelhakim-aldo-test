@@ -2,16 +2,19 @@ import classes from './CandidateView.module.css'
 import React from 'react'
 import {connect} from 'react-redux'
 import {addCandidates} from '../../Redux/actions'
+import ViewsTitle from '../ViewsTitle/ViewsTitle'
+import Tweet from '../Tweet/Tweet'
 const CandidateView = (props) => {
     const renderTweets = () => {
+        console.log(props.selectedCandidate)
         if(!props.selectedCandidate.tweets) return
         return props.selectedCandidate.tweets.map((cur,i) => {
-            return <p key={i}>{cur.text}</p>
+            return <Tweet key={cur.id} tweet={cur.text}/>
         })
     }
     return (
         <div className={classes.container}>
-            <p>{props.selectedCandidate.name}</p>
+            <ViewsTitle text={props.selectedCandidate.name} />
             {props.selectedCandidate.tweets ? renderTweets() : 'loading ..'}   
         </div>
     )

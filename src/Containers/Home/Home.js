@@ -12,7 +12,7 @@ const Home = (props) => {
     }
     return (
         <div className={classes.container}>
-            <PrimaryTitle text={'Latest tweets'} />
+            <PrimaryTitle text={'Twit twit'} />
             <PrimaryButton text={'Switch Candidate'} clicked={switchViewHandler} />
             <div className={classes.candidateContainer}>
                 <CandidateView />

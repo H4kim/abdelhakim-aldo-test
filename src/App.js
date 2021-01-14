@@ -8,7 +8,6 @@ import { TWITTER_USERS_IDS } from './Utils/Constants';
 
 function App(props) {
   useEffect(() => {
-    console.log('x')
     async function getData() {
         const data = await get_candidates(TWITTER_USERS_IDS)
         Promise.all(data).then(res => props.addCandidates(res))
